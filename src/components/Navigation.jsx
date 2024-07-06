@@ -60,10 +60,12 @@ function Navigation() {
                     </svg>
                 </div>
                 <div className='flex flex-col w-full h-full pl-5 font-poppins font-semibold text-4xl xl:text-6xl'>
-                    <Link>Manga</Link>
-                    <Link>Light Novels</Link>
-                    <Link>Information</Link>
-                    <Link className='mb-10'>About</Link>
+                    <div className='flex flex-col gap-2'>
+                        <Link>Manga</Link>
+                        <Link>Light Novels</Link>
+                        <Link>Information</Link>
+                        <Link className='mb-10'>About</Link>
+                    </div>
                     <Link className='text-3xl xl:text-4xl'>My account</Link>
                     <Link className='text-3xl xl:text-4xl mb-1'>Cart</Link>
                     <div className='flex flex-col pt-10 text-sm xl:text-lg'>

@@ -21,7 +21,7 @@ function Pagination({ totalPages, handleSkipChange }) {
     };
 
     return (
-        <div className='flex justify-between items-center px-3'>
+        <div className='flex justify-between items-center px-3 mt-auto'>
             {prevPage ? (
                 <button onClick={() => handlePageChange(prevPage)}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-5">

@@ -22,6 +22,9 @@ export default {
       // => @media (min-width: 1536px) { ... }
     },
     extend: {
+      gridTemplateColumns: {
+        '25/75': '25% 75%',
+      },
       keyframes: {
         low_index: {
           '0%, 80%': { zIndex: '12' },

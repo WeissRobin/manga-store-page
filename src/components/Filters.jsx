@@ -74,29 +74,29 @@ function Filters() {
     
 
     return ( 
-        <div className='manga-filters font-poppins border-t border-black py-4 md:col-start-1'>
-            <h2 className='pl-4 text-2xl font-bold'>Genres</h2>
+        <div className='manga-filters font-poppins border-t border-black py-4 md:col-start-1 md:row-start-1 md:border-r md:border-black'>
+            <h2 className='pl-4 text-2xl font-bold lg:text-3xl lg:py-5'>Genres</h2>
             <div className='grid grid-cols-2 content-center justify-center items-center ml-[4em]'>
                 {
-                    Genres.map((genre) => (
-                        <div className='flex text-[13px]'>
+                    Genres.map((genre, index) => (
+                        <div key={index} className='flex text-[13px] lg:text-base'>
                             <div className='relative'>
                                 <input type='checkbox' className='h-0 w-0 after:content-[""] after:text-white after:w-[8px] after:h-[8px] after:border after:border-black after:absolute after:top-1/2 after:-left-3 after:-translate-y-1/2 check-default peer'/>
-                                <span class='absolute top-1/2 -translate-y-1/2 -left-3 bg-black w-[8px] h-[8px] hidden pointer-events-none peer-checked:block'></span>
+                                <span className='absolute top-1/2 -translate-y-1/2 -left-3 bg-black w-[8px] h-[8px] hidden pointer-events-none peer-checked:block'></span>
                             </div>
                             <span>{genre}</span>
                         </div>
                     ))
                 }
             </div>
-            <h2 className='pl-4 text-2xl font-bold'>Themes</h2>
+            <h2 className='pl-4 text-2xl font-bold lg:text-3xl lg:py-5'>Themes</h2>
             <div className='grid grid-cols-2 content-center justify-center items-center ml-[4em]'>
                 {
-                    Themes.map((theme) => (
-                        <div className='flex text-[13px]'>
+                    Themes.map((theme, index) => (
+                        <div key={index} className='flex text-[13px] lg:text-base lg:mr-10'>
                             <div className='relative'>
                                 <input type='checkbox' className='h-0 w-0 after:content-[""] after:text-white after:w-[8px] after:h-[8px] after:border after:border-black after:absolute after:top-1/2 after:-left-3 after:-translate-y-1/2 check-default peer'/>
-                                <span class='absolute top-1/2 -translate-y-1/2 -left-3 bg-black w-[8px] h-[8px] hidden pointer-events-none peer-checked:block'></span>
+                                <span className='absolute top-1/2 -translate-y-1/2 -left-3 bg-black w-[8px] h-[8px] hidden pointer-events-none peer-checked:block'></span>
                             </div>
                             <span>{theme}</span>
                         </div>
