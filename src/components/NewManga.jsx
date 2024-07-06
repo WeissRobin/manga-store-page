@@ -10,9 +10,9 @@ import manga_6 from '../assets/trending-manga/manga-6.jpg';
 import manga_7 from '../assets/trending-manga/manga-7.png';
 import manga_8 from '../assets/trending-manga/manga-8.jpg';
 
-import TrendingMangaItem from "./TrendingMangaItem";
+import NewMangaItem from "./NewMangaItem";
 
-function TrendingManga() {
+function NewManga() {
 
     const [Manga, setManga] = useState([manga_1, manga_2, manga_3, manga_4, manga_5, manga_6, manga_7, manga_8]);
 
@@ -21,6 +21,19 @@ function TrendingManga() {
     const [prevPercentage, setPrevPercentage] = useState(0);
     const [nextPercentage, setNextPercentage] = useState(0);
     const [trackerPercentage, setTrackerPercentage] = useState(0);
+    const [Animation, setAnimation] = useState(false);
+    const [AnimationComplete, setAnimationComplete] = useState(false);
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        document.querySelector('.trending-title').addEventListener('animationend', () => {
+            setAnimationComplete(true);
+        });
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    },[]);
 
     const handleMouseDown = (e) => {
         setStartPoint(e.clientX);
@@ -48,6 +61,12 @@ function TrendingManga() {
         setPrevPercentage(trackerPercentage);
     }
 
+    const handleScroll = () => {
+        if (window.scrollY >= 700) {
+            setAnimation(true);
+        } 
+    }
+
     function isMobile() {
         const userAgent = navigator.userAgent || navigator.vendor || window.opera;
         return /android|iphone|ipad|ipod|opera mini|iemobile|windows phone|blackberry|mobile|silk|puffin|kindle|webos|hp-tablet|bada/i.test(userAgent);
@@ -55,12 +74,12 @@ function TrendingManga() {
     
     if (isMobile()) {
         return ( 
-            <section className='relative'>
-                <h2 className='absolute top-1/4 left-2 text-7xl font-bold xl:text-[12rem] pointer-events-none'>New Titles</h2>
+            <section className='relative h-[93vh] items-center py-4'>
+                <h2 className='pl-4 text-5xl font-bold xl:text-[20rem] pointer-events-none trending-title'>New Titles</h2>
                 <div className='relative z-10 flex gap-10 overflow-auto px-8 py-16 trending-manga'>
                     {
                         Manga.map((manga, index) => (
-                            <TrendingMangaItem key={index} img={manga}></TrendingMangaItem>
+                            <NewMangaItem key={index} img={manga}></NewMangaItem>
                         ))
                     }
                 </div>
@@ -69,26 +88,17 @@ function TrendingManga() {
     } else {
         return ( 
             <section className='bg-white relative h-[100vh] flex items-center'>
-                <h2 className='absolute top-1/2 -translate-y-1/2 left-0 text-7xl font-bold xl:text-[20rem] pointer-events-none trending-title'>New Titles</h2>
-                <div className='relative z-10 flex gap-20 py-16 left-1/4 trending-manga' onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
+                <h2 className={`absolute top-1/2 -translate-y-1/2 z-[12] left-0 text-7xl font-bold xl:text-[20rem] pointer-events-none trending-title ${Animation ? 'animate-low-index' : ''}`}>New Titles</h2>
+                <div className='relative flex gap-20 py-16 left-1/4 trending-manga' onMouseDown={AnimationComplete ? handleMouseDown : undefined} onMouseMove={AnimationComplete ? handleMouseMove : undefined} onMouseUp={AnimationComplete ? handleMouseUp : undefined}>
                     {
                         Manga.map((manga, index) => (
-                            <TrendingMangaItem key={index} img={manga}></TrendingMangaItem>
+                            <NewMangaItem key={index} img={manga} state={Animation}></NewMangaItem>
                         ))
                     }
                 </div>
             </section>
         );
     }
-
-    /* useEffect(() => {
-        axios.get('https://api.jikan.moe/v4/manga')
-        .then(data => data.data)
-        .then(data => {
-            const trendingManga = data.data.slice(0, 8);
-            setManga(trendingManga);
-        });
-    }, []); */
 }
 
-export default TrendingManga;
+export default NewManga;

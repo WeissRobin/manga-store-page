@@ -14,9 +14,9 @@ function Navigation() {
     return (
         <nav className='border-b border-black fixed z-50 w-full bg-white'>
             <div className='flex px-2 items-center justify-between'>
-                <img src={Logo} alt='Nihon Logo' className='h-auto w-[170px] xl:w-[320px]'/>
+                <img src={Logo} alt='Nihon Logo' className='h-auto w-[200px] xl:w-[350px]'/>
                 <div className='flex'>
-                    <div className='font-sans-japan flex gap-10 font-bold mr-10 items-center'>
+                    <div className='hidden md:flex font-poppins gap-10 font-bold mr-10 items-center'>
                         <Link className='relative group p-1'>
                             <p className='relative z-10 group-hover:text-white'>Manga</p>
                             <span className='absolute z-0 bottom-0 left-0 w-full h-0.5 bg-black transition-all group-hover:h-full'></span>
@@ -34,7 +34,7 @@ function Navigation() {
                             <span className='absolute z-0 bottom-0 left-0 w-full h-0.5 bg-black transition-all group-hover:h-full'></span>
                         </Link>
                     </div>
-                    <div className='icons flex gap-2 mr-3 xl:gap-4'>
+                    <div className='icons flex gap-2 mr-3 xl:gap-4 items-center'>
                     <div className='bag cursor-pointer'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 xl:size-7">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
@@ -59,13 +59,13 @@ function Navigation() {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                     </svg>
                 </div>
-                <div className='flex flex-col w-full h-full pl-5 gap-3 font-sans-japan font-extrabold text-3xl xl:text-6xl'>
+                <div className='flex flex-col w-full h-full pl-5 font-poppins font-semibold text-4xl xl:text-6xl'>
                     <Link>Manga</Link>
                     <Link>Light Novels</Link>
                     <Link>Information</Link>
                     <Link className='mb-10'>About</Link>
-                    <Link className='text-2xl xl:text-4xl'>My account</Link>
-                    <Link className='text-2xl xl:text-4xl mb-1'>Cart</Link>
+                    <Link className='text-3xl xl:text-4xl'>My account</Link>
+                    <Link className='text-3xl xl:text-4xl mb-1'>Cart</Link>
                     <div className='flex flex-col pt-10 text-sm xl:text-lg'>
                         <a href="">Twitter↗</a>
                         <a href="">Instagram↗</a>
