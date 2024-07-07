@@ -24,6 +24,7 @@ export default {
     extend: {
       gridTemplateColumns: {
         '25/75': '25% 75%',
+        '20/80': '20% 80%'
       },
       keyframes: {
         low_index: {

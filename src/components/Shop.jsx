@@ -31,7 +31,7 @@ function Shop() {
     }
 
     return ( 
-        <section className='manga-shop md:grid md:grid-cols-25/75'>
+        <section className='manga-shop md:grid md:grid-cols-20/80'>
             <div className='md:col-start-2 flex flex-col'>
                 <div className='grid grid-cols-2 lg:grid-cols-3 border-t border-black [&>*:nth-child(odd)]:border-r lg:[&>*:nth-child(even)]:border-r'>
                     {

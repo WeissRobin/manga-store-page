@@ -76,7 +76,7 @@ function Filters() {
     return ( 
         <div className='manga-filters font-poppins border-t border-black py-4 md:col-start-1 md:row-start-1 md:border-r md:border-black'>
             <h2 className='pl-4 text-2xl font-bold lg:text-3xl lg:py-5'>Genres</h2>
-            <div className='grid grid-cols-2 content-center justify-center items-center ml-[4em]'>
+            <div className='grid grid-cols-2 md:grid-cols-1 content-center justify-center items-center ml-[4em]'>
                 {
                     Genres.map((genre, index) => (
                         <div key={index} className='flex text-[13px] lg:text-base'>
@@ -90,7 +90,7 @@ function Filters() {
                 }
             </div>
             <h2 className='pl-4 text-2xl font-bold lg:text-3xl lg:py-5'>Themes</h2>
-            <div className='grid grid-cols-2 content-center justify-center items-center ml-[4em]'>
+            <div className='grid grid-cols-2 md:grid-cols-1 content-center justify-center items-center ml-[4em]'>
                 {
                     Themes.map((theme, index) => (
                         <div key={index} className='flex text-[13px] lg:text-base lg:mr-10'>
