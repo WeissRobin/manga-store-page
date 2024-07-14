@@ -76,7 +76,7 @@ function NewManga() {
         return ( 
             <section className='relative h-[93vh] items-center py-4'>
                 <h2 className='pl-4 text-5xl font-bold xl:text-[20rem] pointer-events-none trending-title'>New Titles</h2>
-                <div className='relative z-10 flex gap-10 overflow-auto px-8 py-16 trending-manga'>
+                <div className='relative z-10 grid grid-flow-col auto-cols-25percent max-w-[750px] gap-10 overflow-auto px-8 py-16 trending-manga'>
                     {
                         Manga.map((manga, index) => (
                             <NewMangaItem key={index} img={manga}></NewMangaItem>
@@ -89,7 +89,7 @@ function NewManga() {
         return ( 
             <section className='bg-white relative h-[100vh] flex items-center'>
                 <h2 className={`absolute top-1/2 -translate-y-1/2 z-[12] left-0 text-7xl font-bold xl:text-[20rem] pointer-events-none trending-title ${Animation ? 'animate-low-index' : ''}`}>New Titles</h2>
-                <div className='relative flex gap-20 py-16 left-1/4 trending-manga' onMouseDown={AnimationComplete ? handleMouseDown : undefined} onMouseMove={AnimationComplete ? handleMouseMove : undefined} onMouseUp={AnimationComplete ? handleMouseUp : undefined}>
+                <div className='relative grid grid-flow-col auto-cols-25percent max-w-[750px] gap-20 py-16 left-1/4 trending-manga' onMouseDown={AnimationComplete ? handleMouseDown : undefined} onMouseMove={AnimationComplete ? handleMouseMove : undefined} onMouseUp={AnimationComplete ? handleMouseUp : undefined}>
                     {
                         Manga.map((manga, index) => (
                             <NewMangaItem key={index} img={manga} state={Animation}></NewMangaItem>
